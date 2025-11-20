@@ -93,3 +93,67 @@ select job_title from jobs;
 
 --Column Aliases
 
+--AS keyword is optional
+select salary*12 as ANNASAL from employees;
+--Annasal is the temporary name of salary*12
+
+select salary*12 as "Anual Salary" from employees;
+--when you need more than one word in aliase, then use  " ".
+
+
+--Concatenation Operator
+--This operator is use to concat columns or values
+
+select first_name || last_name from employees;
+
+select 'Chota ' || 'Bheem' Cartoon from dual;
+
+
+--Literal character string(' ')
+--Literal can be combination of any thing (A-Z),(a-z),(0-9) & any special charater
+select last_name || ' is a ' || job_id as "Employee Details" from employees;
+
+
+--Alternative quote(q) operator
+--With this (q) we can use quotation mark in literal 
+select department_name || q'[ Department's Mgr Id: ]' || manager_id as "department and manager" from departments;
+
+
+--Duplicate rows elimination with DISTINCT keyword
+--you can remove duplicate records from data
+
+select distinct department_id from employees;
+
+
+--Displaying table structure
+describe employees;
+
+--OR
+
+desc employees;
+--this two commands will structure of a table 
+
+--------------------------------------------------------------------------------
+--Sharpen your pencil
+--------------------------------------------------------------------------------
+--1) Display the job IDs of employees (no duplicates). Rename column as “Designation”.
+SELECT DISTINCT job_id AS "Designation"
+FROM employees;
+
+--2) Display last name & salary of employees as: Name – Salary (concatenated).
+SELECT last_name || ' - ' || salary AS "Name - Salary"
+FROM employees;
+
+--3) List name, salary, and PF of all employees.
+SELECT first_name || ' ' || last_name AS name,
+       salary,
+       salary * 0.10 AS "PF"
+FROM employees;
+
+--4) Check the structure of tables: Departments, Jobs, Employees.
+DESCRIBE departments;
+DESCRIBE jobs;
+DESCRIBE employees;
+
+
+
