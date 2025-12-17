@@ -1,4 +1,4 @@
---Chapter 3 Rstriction and Sorting
+`--Chapter 3 Rstriction and Sorting
 select * from employees;
 --RESTRINCTING WITH COMPARITION OPERATOR(Where)
 select employee_id, last_name , job_id,  department_id 

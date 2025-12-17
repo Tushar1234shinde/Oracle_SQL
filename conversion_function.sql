@@ -31,7 +31,7 @@ select last_name, hire_date, to_char(hire_date,'fmDD MON YYYY') from employees;
 
 select to_char(current_date,'yyyyspth') , to_char(current_date,'year')from dual;
 
-select to_char(94747459,'$99,999,999.00') from dual;
+select to_char(94747459.25676,'$99,999,999.00') from dual;
 
 select TO_CHAR(salary,'L99,999.0000') from employees;
 
