@@ -40,3 +40,5 @@ decode( trunc(salary/2000,0),
 0.45) "Tax Rate"
 from employees
 where department_id=80;
+
+
