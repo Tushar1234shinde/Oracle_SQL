@@ -28,3 +28,40 @@ or employee_id =
 where department_id=50 
 fetch first 1 row only)
 order by department_id;
+
+select e.employee_id, e.last_name, e.department_id,
+d.department_id, d.department_name
+ from employees e join departments d
+ on(e.department_id=d.department_id);
+ 
+ select employee_id, department_name, city
+ from employees e join departments d
+ on(e.department_id=d.department_id)
+ join locations l
+ on(l.location_id=d.location_id);
+ 
+  select employee_id, department_name, city
+ from employees e join departments d
+ using(department_id)
+ join locations l
+ using(location_id);
+ 
+ select e.employee_id, e.last_name, e.department_id,
+d.department_id, d.department_name
+ from employees e join departments d
+ on(e.department_id=d.department_id)
+ where e.manager_id=149;
+ 
+ select e.employee_id, e.last_name, e.department_id,
+d.department_id, d.department_name
+ from employees e join departments d
+ on(e.department_id=d.department_id)
+ and e.manager_id=149;
+ 
+ 
+ select e.last_name emp, m.last_name mgr
+ from employees e join employees m
+ on(e.manager_id=m.employee_id)
+ where e.last_name = 'Abel';
+ 
+ 
