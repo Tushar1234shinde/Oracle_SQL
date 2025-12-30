@@ -112,16 +112,18 @@ FROM
          employees e
     JOIN departments d ON ( e.department_id = d.department_id );
  
---three way join with on clause
+--four way join with on clause
 SELECT
     employee_id,
     department_name,
-    city
+    city,
+    country_name
 FROM
          employees e
     JOIN departments d ON ( e.department_id = d.department_id )
-    JOIN locations   l ON ( l.location_id = d.location_id );
-
+    JOIN locations   l ON ( l.location_id = d.location_id )
+    JOIN countries   c ON ( l.country_id = c.country_id );
+select * from countries;
 --three way join with using clause
 SELECT
     employee_id,
@@ -166,3 +168,31 @@ WHERE
     e.last_name = 'Abel';
     
 --non-equi join
+-- Create the JOB_GRADES table
+CREATE TABLE JOB_GRADES (
+    GRADE_LEVEL VARCHAR2(2),
+    LOWEST_SAL NUMBER(8,2),
+    HIGHEST_SAL NUMBER(8,2)
+);
+
+-- Insert values into JOB_GRADES
+INSERT INTO JOB_GRADES (GRADE_LEVEL, LOWEST_SAL, HIGHEST_SAL)
+VALUES ('A', 1000, 2999);
+
+INSERT INTO JOB_GRADES (GRADE_LEVEL, LOWEST_SAL, HIGHEST_SAL)
+VALUES ('B', 3000, 5999);
+
+INSERT INTO JOB_GRADES (GRADE_LEVEL, LOWEST_SAL, HIGHEST_SAL)
+VALUES ('C', 6000, 9999);
+
+INSERT INTO JOB_GRADES (GRADE_LEVEL, LOWEST_SAL, HIGHEST_SAL)
+VALUES ('D', 10000, 14999);
+
+INSERT INTO JOB_GRADES (GRADE_LEVEL, LOWEST_SAL, HIGHEST_SAL)
+VALUES ('E', 15000, 24999);
+
+INSERT INTO JOB_GRADES (GRADE_LEVEL, LOWEST_SAL, HIGHEST_SAL)
+VALUES ('F', 25000, 40000);
+
+-- Save changes
+COMMIT;
