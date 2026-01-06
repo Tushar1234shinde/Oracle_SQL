@@ -100,3 +100,9 @@ from employees outer
 where exists (select null
 from employees
 where manager_id=outer.employee_id);
+
+select employee_id, last_name, department_id, job_id
+from employees outer
+where not exists (select null
+from employees
+where manager_id=outer.employee_id);
