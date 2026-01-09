@@ -1,4 +1,4 @@
---DML STATEMENT
+--DML STATEMENT (Data Manipulation Language)
 
 --insert
 --update
