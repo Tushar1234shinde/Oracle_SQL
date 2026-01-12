@@ -1,10 +1,10 @@
---BRAND TABLE
+--1. BRAND TABLE
 CREATE TABLE brands (
     brand_id      BIGINT PRIMARY KEY AUTO_INCREMENT,
     brand_name    VARCHAR(200) UNIQUE
 );
 
---SELLERS TABLE
+--2. SELLERS TABLE
 CREATE TABLE sellers (
     seller_id     BIGINT PRIMARY KEY AUTO_INCREMENT,
     seller_name   VARCHAR(200),
@@ -15,7 +15,7 @@ CREATE TABLE sellers (
     rating        DECIMAL(3,2) DEFAULT 0
 );
 
---CATEGORY TABLE (MULTI-LEVEL)
+--3. CATEGORY TABLE (MULTI-LEVEL)
 CREATE TABLE categories (
     category_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
     category_name          VARCHAR(200),
@@ -23,7 +23,7 @@ CREATE TABLE categories (
     FOREIGN KEY (parent_id) REFERENCES categories(category_id)
 );
 
---PRODUCTS TABLE
+--4. PRODUCTS TABLE
 CREATE TABLE products (
     product_id      BIGINT PRIMARY KEY AUTO_INCREMENT,
     seller_id       BIGINT,
@@ -41,7 +41,7 @@ CREATE TABLE products (
     FOREIGN KEY (category_id) REFERENCES categories(category_id)
 );
 
---PRODUCT IMAGES
+--5. PRODUCT IMAGES
 CREATE TABLE product_images (
     id           BIGINT PRIMARY KEY AUTO_INCREMENT,
     product_id   BIGINT,
@@ -49,7 +49,7 @@ CREATE TABLE product_images (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
---OFFERS / DISCOUNTS
+--6. PRODUCT OFFERS / DISCOUNTS
 CREATE TABLE offers (
     offer_id       BIGINT PRIMARY KEY AUTO_INCREMENT,
     title          VARCHAR(200),
@@ -59,6 +59,7 @@ CREATE TABLE offers (
     end_date       DATE
 );
 
+--7. PRODUCT_OFFERS
 CREATE TABLE product_offers (
     id           BIGINT PRIMARY KEY AUTO_INCREMENT,
     product_id   BIGINT,
@@ -67,7 +68,7 @@ CREATE TABLE product_offers (
     FOREIGN KEY (offer_id) REFERENCES offers(offer_id)
 );
 
---PRODUCT VARIANTS (Size/Color etc.)
+--8. PRODUCT VARIANTS (Size/Color etc.)
 CREATE TABLE product_variants (
     variant_id      BIGINT PRIMARY KEY AUTO_INCREMENT,
     product_id      BIGINT,
@@ -78,7 +79,7 @@ CREATE TABLE product_variants (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
---USERS TABLE
+--9. USERS TABLE
 CREATE TABLE users (
     user_id        BIGINT PRIMARY KEY AUTO_INCREMENT,
     name           VARCHAR(200),
@@ -89,7 +90,7 @@ CREATE TABLE users (
     created_at     TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
---WISHLIST
+--10. WISHLIST
 CREATE TABLE wishlist (
     wishlist_id   BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_id       BIGINT,
@@ -97,6 +98,7 @@ CREATE TABLE wishlist (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
+--11. WISHLIST ITEMS
 CREATE TABLE wishlist_items (
     id           BIGINT PRIMARY KEY AUTO_INCREMENT,
     wishlist_id  BIGINT,
@@ -105,7 +107,7 @@ CREATE TABLE wishlist_items (
     FOREIGN KEY (product_id) REFERENCES products(product_id)
 );
 
---ORDERS TABLE
+--12. ORDERS TABLE
 CREATE TABLE orders (
     order_id        BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_id         BIGINT,
@@ -118,7 +120,7 @@ CREATE TABLE orders (
     FOREIGN KEY (address_id) REFERENCES user_addresses(address_id)
 );
 
---ORDER ITEMS
+--13. ORDER ITEMS
 CREATE TABLE order_items (
     order_item_id  BIGINT PRIMARY KEY AUTO_INCREMENT,
     order_id       BIGINT,
@@ -131,7 +133,7 @@ CREATE TABLE order_items (
     FOREIGN KEY (variant_id) REFERENCES product_variants(variant_id)
 );
 
---PAYMENT TABLE
+--14. PAYMENT TABLE
 CREATE TABLE payments (
     payment_id      BIGINT PRIMARY KEY AUTO_INCREMENT,
     order_id        BIGINT,
@@ -142,7 +144,7 @@ CREATE TABLE payments (
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
---SHIPMENTS / DELIVERY
+--15. SHIPMENTS / DELIVERY
 CREATE TABLE shipment (
     shipment_id      BIGINT PRIMARY KEY AUTO_INCREMENT,
     order_id         BIGINT,
@@ -154,7 +156,7 @@ CREATE TABLE shipment (
     FOREIGN KEY (order_id) REFERENCES orders(order_id)
 );
 
---refund
+--16. REFUND TABLE
 CREATE TABLE refunds (
     refund_id     INT PRIMARY KEY AUTO_INCREMENT,
     order_id      INT NOT NULL,
@@ -170,7 +172,7 @@ CREATE TABLE refunds (
         ON DELETE CASCADE
 );
 
---ADDRESS TABLE
+--17. ADDRESS TABLE
 CREATE TABLE user_addresses (
     address_id     BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_id        BIGINT,
@@ -185,7 +187,7 @@ CREATE TABLE user_addresses (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
---CART TABLE
+--18. CART TABLE
 CREATE TABLE cart (
     cart_id       BIGINT PRIMARY KEY AUTO_INCREMENT,
     user_id       BIGINT,
@@ -193,7 +195,7 @@ CREATE TABLE cart (
     FOREIGN KEY (user_id) REFERENCES users(user_id)
 );
 
---CART ITEMS
+--19. CART ITEMS
 CREATE TABLE cart_items (
     cart_item_id BIGINT PRIMARY KEY AUTO_INCREMENT,
     cart_id      BIGINT,
@@ -205,7 +207,7 @@ CREATE TABLE cart_items (
     FOREIGN KEY (variant_id) REFERENCES product_variants(variant_id)
 );
 
---PRODUCT REVIEWS
+--20. PRODUCT REVIEWS
 CREATE TABLE reviews (
     review_id     BIGINT PRIMARY KEY AUTO_INCREMENT,
     product_id    BIGINT,
