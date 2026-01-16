@@ -88,3 +88,9 @@ from role_name;
 
 --deleting user 
 drop user user_name cascade;
+
+--disconnecting connection command
+disc
+
+--reconnecting command
+conn
