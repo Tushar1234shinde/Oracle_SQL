@@ -85,3 +85,6 @@ revoke delete
 on departments
 from role_name;
 
+
+--deleting user 
+drop user user_name cascade;
