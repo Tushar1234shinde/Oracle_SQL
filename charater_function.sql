@@ -7,6 +7,7 @@
 
 
 --1] Character Function
+
 -- Character case-conversion function
 select lower(first_name), upper(last_name), initcap(job_id) from employees;
 
@@ -34,7 +35,8 @@ select trim(trailing 'a' from 'Nikitaaaaa') from dual;
 
 select trim(leading 'N' from 'Nikita') from dual;
 
-select trim(both 'n' from 'nikitan') from dual;
+select trim(both 'n' from 'nitin') from dual;
+
 
 
 
