@@ -55,7 +55,10 @@ select trunc(sysdate,'year') from dual;
 
 select trunc(to_date('12-Nov-25'),'Year') from dual;
 
-
+--round
+-- dy/day : round to nearest sunday date (sunday,monday,tuesday,wednesday=current sunday -and- thursday,friday,saturday=next week sunday)
+-- mm/mon/month : round months on the basis of date(dd) (dd>15 = next month -and- dd<=15 = current month)
+-- rr/yy/yyyy/year : round year on the basis of month (month>june(06) = next year -and- month<=june(06) = current year)
 select round(to_date('27-jan-25'),'dd') from dual;
 
 select round(to_date('27-jan-25'),'dy') from dual;
@@ -92,6 +95,7 @@ select trunc(to_date('27-jan-25'),'year') from dual;
 select trunc(to_date('27-jan-25'),'yy') from dual;
 
 select trunc(to_date('27-jan-25'),'year') from dual;
+
 
 
 
