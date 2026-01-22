@@ -56,6 +56,43 @@ select trunc(sysdate,'year') from dual;
 select trunc(to_date('12-Nov-25'),'Year') from dual;
 
 
+select round(to_date('27-jan-25'),'dd') from dual;
+
+select round(to_date('27-jan-25'),'dy') from dual;
+
+select round(to_date('27-jan-25'),'day') from dual;
+
+select round(to_date('27-jan-25'),'mm') from dual;
+
+select round(to_date('27-jan-25'),'mon') from dual;
+
+select round(to_date('27-jan-25'),'month') from dual;
+
+select round(to_date('27-jan-25'),'year') from dual;
+
+select round(to_date('27-jan-25'),'yy') from dual;
+
+select round(to_date('27-jan-25'),'year') from dual;
+
+--trunc
+select trunc(to_date('27-jan-25'),'dd') from dual;
+
+select trunc(to_date('27-jan-25'),'dy') from dual;
+
+select trunc(to_date('27-jan-25'),'day') from dual;
+
+select trunc(to_date('27-jan-25'),'mm') from dual;
+
+select trunc(to_date('27-jan-25'),'mon') from dual;
+
+select trunc(to_date('27-jan-25'),'month') from dual;
+
+select trunc(to_date('27-jan-25'),'year') from dual;
+
+select trunc(to_date('27-jan-25'),'yy') from dual;
+
+select trunc(to_date('27-jan-25'),'year') from dual;
+
 
 
 
