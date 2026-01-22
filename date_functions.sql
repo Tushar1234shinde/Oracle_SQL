@@ -78,6 +78,9 @@ select round(to_date('27-jan-25'),'yy') from dual;
 select round(to_date('27-jan-25'),'year') from dual;
 
 --trunc
+-- dy/day : trunc to current sunday
+-- mm/mon/month : trunc months on the basis of dd 
+-- rr/yy/yyyy/year : trunc year on the basis of month
 select trunc(to_date('27-jan-25'),'dd') from dual;
 
 select trunc(to_date('27-jan-25'),'dy') from dual;
@@ -95,6 +98,7 @@ select trunc(to_date('27-jan-25'),'year') from dual;
 select trunc(to_date('27-jan-25'),'yy') from dual;
 
 select trunc(to_date('27-jan-25'),'year') from dual;
+
 
 
 
