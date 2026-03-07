@@ -82,6 +82,4 @@ DESC departments;
 DESC jobs;
 
 -- Q4(c). Check the structure of Employees table.
-
 DESC employees;
-

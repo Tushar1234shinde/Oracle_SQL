@@ -63,7 +63,7 @@ WHERE last_name LIKE '__R%';
 -- Q3. List the first name and last name of employees whose first names have exactly five characters.
 SELECT first_name, last_name
 FROM employees
-WHERE LENGTH(first_name) = 5;
+WHERE first_name LIKE '_____';
 
 -- Q4. List the employee names who do not get any commission.
 SELECT first_name, last_name
@@ -119,5 +119,4 @@ ORDER BY salary DESC;
 SELECT last_name, salary
 FROM employees
 WHERE department_id = 80
-
 ORDER BY 2 DESC;

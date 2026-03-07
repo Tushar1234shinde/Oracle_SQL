@@ -12,5 +12,3 @@
 
 -- 5. Display cities to which sales people belong to. [Do not include duplicate ones]. Display the column name as “Cities”.
    select distinct city as "Cities" from Salesperson;
-
-
