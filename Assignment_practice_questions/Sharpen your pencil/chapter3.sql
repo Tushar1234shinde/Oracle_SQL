@@ -119,4 +119,5 @@ ORDER BY salary DESC;
 SELECT last_name, salary
 FROM employees
 WHERE department_id = 80
+
 ORDER BY 2 DESC;
