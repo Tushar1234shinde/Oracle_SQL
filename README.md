@@ -7,6 +7,7 @@ This repository contains a detailed explanation of the Oracle HR (Human Resource
 The HR Schema represents a fictional company’s employees, departments, jobs, and geographical information.
 It is widely used in Oracle SQL Developer, SQL*Plus, and various database training environments.
 
+
 📂 Schema Diagram
 
 The HR Schema includes 7 main tables, all connected with primary–foreign key relationships:
