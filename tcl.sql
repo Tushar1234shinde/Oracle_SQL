@@ -12,6 +12,7 @@ where department_id in (194,100);
 
 savepoint a;
 
+
 insert into copy_emp
 values(207,'f_name','l_name','email','45679393939',sysdate, 'AC_MGR',15000,null,124,50);
 
